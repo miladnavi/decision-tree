@@ -13,15 +13,12 @@ Note: It reduces the misclassfication error on test-dataset and not on training-
 ```
 <br/>
 
-**1- Error-Complexity Pruning:**
-<br/>
-<br/>
-**2- Minimum-Error Pruning:**
-<br/>
-<br/>
-**3- Pessimistic-Error Pruning:**
-<br/>
-<br/>
+1. *Error-Complexity Pruning:*
+
+2. *Minimum-Error Pruning:*
+
+3. *Pessimistic-Error Pruning:*
+
 
 
 ## Getting Start
