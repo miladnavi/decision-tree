@@ -11,7 +11,6 @@ There are some approaches to tackle the generalisation problem and prevent overf
 ```
 Note: It reduces the misclassfication error on test-dataset and not on training-dateset.
 ```
-<br/>
 
 1. *Error-Complexity Pruning:*
 
