@@ -9,6 +9,9 @@ class Forest:
 
     @staticmethod
     def _seed_trees(number_of_trees):
+        """
+        set self.trees to list of trees with length number_of_trees
+        """
         return [Node() for _ in range(number_of_trees)]
 
     @staticmethod
@@ -24,8 +27,11 @@ class Forest:
                 yield item
 
     def nurture_forest(self, x_train, y_train, size_of_forest):
+        """
+        train all trees in self.trees
+        """
         self.trees     = self._seed_trees(size_of_forest)
-        all_attr_sets  = list(self._power_set(range(0, len(x_train[0, :]))))
+        all_attr_sets  = list(self._power_set(range(0, len(x_train[0, :]))))[:-1]  # no empty sets
         forest_sets    = random.sample(range(1, len(all_attr_sets)), size_of_forest)
 
         for node, feature_set in zip(self.trees, forest_sets):
