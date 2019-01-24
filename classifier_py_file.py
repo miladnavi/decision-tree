@@ -17,6 +17,7 @@ Y_train = data[indices, 4]
 
 
 class Node:
+
     def __init__(self):
         self.leaf = False
         self.attr = None
@@ -24,7 +25,6 @@ class Node:
         self.split_criterion = None
         self.children = []
         self.result = None
-
 
     @staticmethod
     def _entropy(label_counts):
@@ -36,6 +36,14 @@ class Node:
         etrp = tmp * np.log2(tmp, out=np.zeros_like(tmp), where=(label_counts != 0))
 
         return - np.sum(etrp)
+
+    @staticmethod
+    def _make_children(number):
+        """
+        In:  Number of children
+        Out: List of nodes (children)
+        """
+        return [Node() for _ in range(number)]
 
     def _information_gain(self, cross_tab):
         """
@@ -74,14 +82,6 @@ class Node:
 
         return ig.index(max(ig)), sp[ig.index(max(ig))]
 
-    @staticmethod
-    def _make_children(number):
-        """
-        In:  Number of children
-        Out: List of nodes (children)
-        """
-        return [Node() for _ in range(number)]
-
     def fit(self, x_train, y_train):
         """
         Fit the model
@@ -92,7 +92,7 @@ class Node:
 
         if len(self.result) == 1:
             self.leaf = True
-            print(self.result)
+            # print(self.result)
 
         else:
             self.attr, self.split_criterion = self._find_attr(x_train, y_train)
@@ -131,8 +131,26 @@ class Node:
                     self.children[1].predict(x)
 
             if self.data_type == 2:
-                self.children[self.split_criterion.index(x)].predict(x)
+                clss = np.int(np.where(x[self.attr] == self.split_criterion)[0])
+                self.children[clss].predict(x)
+
+        else:
+            print(self.result)
+
 
 
 tree = Node()
 tree.fit(X_train, Y_train)
+
+# print(X_train[4, :])
+# print(tree.attr)
+# print(tree.split_criterion)
+#
+# print(np.int(np.where(X_train[4, tree.attr] == tree.split_criterion)[0]))
+#
+# print(tree.children[3].attr)
+
+
+print(tree.predict(X_train[4, :]))
+
+
