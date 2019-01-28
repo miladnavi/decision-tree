@@ -47,7 +47,7 @@ class Node:
         :param y_train: training labels
         :return: index of attribute to split by and information about the split
                     1 (metric): threshold to split by
-                    2 (ordinal): class labels for children
+                    2 (nominal): class labels for children
         """
         ig = []  # List of Information Gain Values for each Attribute
         sp = []  # List of Thresholds to split by if Attribute is metric
@@ -63,7 +63,7 @@ class Node:
                 ig.append(max(information_gains))
                 sp.append(thresholds[information_gains.index(max(information_gains))])
 
-            if attribute[0] == 2:  # Attribute is ordinal
+            if attribute[0] == 2:  # Attribute is nominal
                 ig.append(self._information_gain(np.array(pd.crosstab(attr, y_train))))
                 sp.append(np.unique(attr))
 

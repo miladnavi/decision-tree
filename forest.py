@@ -43,7 +43,7 @@ class Forest:
 
     def ask_forest_for_guidance(self, instance):
         """
-        :param instance: self, instance w/o label
+        :param instance: instance w/o label
         :return: predicted label
         """
         votes = [max(tree.predict(instance), key=tree.predict(instance).get) for tree in self.trees]
@@ -51,4 +51,4 @@ class Forest:
         # only return the vote with the highest count
         return max(votes, key=votes.count)
 
-        # TODO: way to return a dict with counts for every class like Node.predict does
+        # TODO: return a dict with counts for every class like Node.predict does
