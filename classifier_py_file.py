@@ -46,16 +46,16 @@ class Node:
         :param x_train: training set with data types in first row
         :param y_train: training labels
         :return: index of attribute to split by and information about the split
-                    1 (metric): threshold to split by
-                    2 (nominal): class labels for children
+                    1 (numerical): threshold to split by
+                    2 (categorical): class labels for children
         """
         ig = []  # List of Information Gain Values for each Attribute
-        sp = []  # List of Thresholds to split by if Attribute is metric
+        sp = []  # List of Thresholds to split by if Attribute is numerical
 
         for attribute in x_train.T:
             attr = attribute[1:]  # First row always contains Information about the Attributes themselves, no data
 
-            if attribute[0] == 1:  # Attribute is metric
+            if attribute[0] == 1:  # Attribute is numerical
                 thresholds = np.convolve(np.sort(attr), np.array([.5, .5]), mode='valid')
                 information_gains = [self._information_gain(np.array(pd.crosstab([attr > thresholds[i]], y_train)))
                                      for i in range(0, (len(attr) - 1))]
@@ -63,7 +63,7 @@ class Node:
                 ig.append(max(information_gains))
                 sp.append(thresholds[information_gains.index(max(information_gains))])
 
-            if attribute[0] == 2:  # Attribute is nominal
+            if attribute[0] == 2:  # Attribute is categorical
                 ig.append(self._information_gain(np.array(pd.crosstab(attr, y_train))))
                 sp.append(np.unique(attr))
 
