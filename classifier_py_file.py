@@ -1,20 +1,6 @@
 import numpy as np
 import pandas as pd
 
-'''
-Data to make examples with
-'''
-data = np.array(pd.read_csv('dataset_61_iris.csv'))
-# :----------- metric
-# X_train = np.array(data[:, 0:4])
-# X_train = np.vstack((np.array([1, 1, 1, 1]), X_train))
-# Y_train = np.array(data[:, 4])
-# :----------- ordinal
-X_train = np.array(data[:, 0:4])
-X_train, indices = np.unique(np.round(X_train.astype(np.double)), axis=0, return_index=True)
-X_train = np.vstack((np.array([2, 2, 2, 2]), X_train))
-Y_train = data[indices, 4]
-
 
 class Node:
 
@@ -126,31 +112,13 @@ class Node:
             if self.data_type == 1:
 
                 if x[self.attr] > self.split_criterion:
-                    self.children[0].predict(x)
+                    return self.children[0].predict(x)
                 else:
-                    self.children[1].predict(x)
+                    return self.children[1].predict(x)
 
             if self.data_type == 2:
                 clss = np.int(np.where(x[self.attr] == self.split_criterion)[0])
-                self.children[clss].predict(x)
+                return self.children[clss].predict(x)
 
         else:
-            print(self.result)
-
-
-
-tree = Node()
-tree.fit(X_train, Y_train)
-
-# print(X_train[4, :])
-# print(tree.attr)
-# print(tree.split_criterion)
-#
-# print(np.int(np.where(X_train[4, tree.attr] == tree.split_criterion)[0]))
-#
-# print(tree.children[3].attr)
-
-
-print(tree.predict(X_train[4, :]))
-
-
+            return self.result
