@@ -6,18 +6,12 @@ class Forest:
 
     def __init__(self):
         self.trees = []
+        self.size = None
 
-    @staticmethod
-    def _seed_trees(number_of_trees):
-        """
-        set self.trees to list of trees with length number_of_trees
-        """
-        return [Node() for _ in range(number_of_trees)]
-
-    @staticmethod
     def _power_set(self, seq):
         """
-        Returns all the subsets of this set. This is a generator.
+        :param seq: some sequence in form of an iterable
+        :return: power set of the sequence
         """
         if len(seq) <= 0:
             yield []
@@ -26,13 +20,30 @@ class Forest:
                 yield [seq[0]] + item
                 yield item
 
-    def nurture_forest(self, x_train, y_train, size_of_forest):
+    def _seed_trees(self, number_of_trees):
         """
-        train all trees in self.trees
+        :param number_of_trees: number of trees in the forest
+        :return: list containing number_of_trees trees
         """
-        self.trees     = self._seed_trees(size_of_forest)
-        all_attr_sets  = list(self._power_set(range(0, len(x_train[0, :]))))[:-1]  # no empty sets
-        forest_sets    = random.sample(range(1, len(all_attr_sets)), size_of_forest)
+        self.size = number_of_trees
+        return [Node() for _ in range(number_of_trees)]
 
-        for node, feature_set in zip(self.trees, forest_sets):
-            node.fit(x_train[:, feature_set], y_train)
+    def nurture_forest(self, x_train, y_train):
+        """
+        :param x_train: training set with data types in first row
+        :param y_train: training labels
+        :return: Fit all trees in trees. No return value
+        """
+        self.trees    = self._seed_trees(self.size)
+        all_attr_sets = list(self._power_set(range(0, len(x_train[0, :]))))[:-1]  # no empty sets
+        feature_sets  = random.sample(range(1, len(all_attr_sets)), self.size)
+
+        for tree, feature_set in zip(self.trees, feature_sets):
+            tree.fit(x_train[:, feature_set], y_train)
+
+    def ask_forest_for_guidance(self, instance):
+        """
+        :param instance: self, instance w/o label
+        :return: predicted label
+        """
+        votes = [tree.predict(instance) for tree in self.trees]

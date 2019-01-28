@@ -13,28 +13,28 @@ class Node:
         self.result = None
 
     @staticmethod
+    def _make_children(number):
+        """
+        :param number: number of children for given node
+        :return: list of children
+        """
+        return [Node() for _ in range(number)]
+
+    @staticmethod
     def _entropy(label_counts):
         """
-        In:  Label counts in np.array
-        Out: Entropy (0s and 1s respectively)
+        :param label_counts: vector of label counts for any partition
+        :return: entropy (https://en.wikipedia.org/wiki/Entropy_(information_theory))
         """
         tmp = label_counts / np.sum(label_counts)
         etrp = tmp * np.log2(tmp, out=np.zeros_like(tmp), where=(label_counts != 0))
 
         return - np.sum(etrp)
 
-    @staticmethod
-    def _make_children(number):
-        """
-        In:  Number of children
-        Out: List of nodes (children)
-        """
-        return [Node() for _ in range(number)]
-
     def _information_gain(self, cross_tab):
         """
-         In:  Cross tab of X_train and Y_train
-         Out: The information gain IG(A,Y) = E(Y) - SUM (|Di| / |D| * E(Di))
+        :param cross_tab: cross table for any subset in [x_train, y_train]
+        :return: information gain (https://en.wikipedia.org/wiki/Information_gain_ratio)
         """
         etrp_before = self._entropy(np.bincount(np.sum(cross_tab, axis=0)))
         etrp_after = sum([np.sum(row) * self._entropy(row) / np.sum(cross_tab) for row in cross_tab])
@@ -43,10 +43,11 @@ class Node:
 
     def _find_attr(self, x_train, y_train):
         """
-        In:  Data
-        Out: 1. Index of attribute to split by
-             2. Threshold to split by if found attribute is metric
-             3. Classes if found attribute is ordinal
+        :param x_train: training set with data types in first row
+        :param y_train: training labels
+        :return: index of attribute to split by and information about the split
+                    1 (metric): threshold to split by
+                    2 (ordinal): class labels for children
         """
         ig = []  # List of Information Gain Values for each Attribute
         sp = []  # List of Thresholds to split by if Attribute is metric
@@ -64,13 +65,15 @@ class Node:
 
             if attribute[0] == 2:  # Attribute is ordinal
                 ig.append(self._information_gain(np.array(pd.crosstab(attr, y_train))))
-                sp.append(np.unique(attr))  # No Threshold can be calculated
+                sp.append(np.unique(attr))
 
         return ig.index(max(ig)), sp[ig.index(max(ig))]
 
     def fit(self, x_train, y_train):
         """
-        Fit the model
+        :param x_train: training set with data types in first row
+        :param y_train: training labels
+        :return: Fit all trees in trees. No return value
         """
         x_data = x_train[1:, :]
         unique, counts = np.unique(y_train, return_counts=True)
@@ -103,22 +106,22 @@ class Node:
                     node.fit(np.vstack((x_train[0, :], x_data[x_data[:, self.attr] == clss, :])),
                              y_train[x_data[:, self.attr] == clss])
 
-    def predict(self, x):
+    def predict(self, instance):
         """
-        Predict label for single instance
+        :param instance: training instance
+        :return: result dict
         """
         if not self.leaf:
 
             if self.data_type == 1:
 
-                if x[self.attr] > self.split_criterion:
-                    return self.children[0].predict(x)
+                if instance[self.attr] > self.split_criterion:
+                    return self.children[0].predict(instance)
                 else:
-                    return self.children[1].predict(x)
+                    return self.children[1].predict(instance)
 
             if self.data_type == 2:
-                clss = np.int(np.where(x[self.attr] == self.split_criterion)[0])
-                return self.children[clss].predict(x)
-
+                clss = np.int(np.where(instance[self.attr] == self.split_criterion)[0])
+                return self.children[clss].predict(instance)
         else:
             return self.result
