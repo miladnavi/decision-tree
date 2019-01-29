@@ -125,3 +125,4 @@ class Node:
                 return self.children[clss].predict(instance)
         else:
             return self.result
+

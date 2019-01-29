@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05cd5456-b844-4cb6-acba-e79504210de3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classifier_py_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/classifier_py_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,12 +13,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classifier_py_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+            <state relative-caret-position="686">
+              <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/forest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="53" lean-forward="true" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+            <state relative-caret-position="135">
+              <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -41,8 +41,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="2" column="35" lean-forward="true" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+            <state relative-caret-position="491">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,7 +53,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/func_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="933">
+            <state relative-caret-position="1305">
               <caret line="88" selection-start-line="88" selection-end-line="88" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -93,8 +96,8 @@
         <option value="$PROJECT_DIR$/func_test.py" />
         <option value="$PROJECT_DIR$/classifier.ipynb" />
         <option value="$PROJECT_DIR$/forest.py" />
-        <option value="$PROJECT_DIR$/classifier_py_file.py" />
         <option value="$PROJECT_DIR$/data_test.py" />
+        <option value="$PROJECT_DIR$/classifier_py_file.py" />
       </list>
     </option>
   </component>
@@ -333,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548674308293</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="toy example. ready to run">
+      <created>1548683498401</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1548683498401</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -397,7 +407,8 @@
     <MESSAGE value="useful comments, some stuff in forest.py" />
     <MESSAGE value="predict for forests, minor mistakes, comments" />
     <MESSAGE value="minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
+    <MESSAGE value="toy example. ready to run" />
+    <option name="LAST_COMMIT_MESSAGE" value="toy example. ready to run" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/create-tree.py" />
@@ -431,8 +442,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/func_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="933">
+        <state relative-caret-position="1305">
           <caret line="88" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classifier_py_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="686">
+          <caret line="126" column="30" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -441,28 +462,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/forest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="53" lean-forward="true" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+        <state relative-caret-position="135">
+          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classifier_py_file.py">
+    <entry file="file://$PROJECT_DIR$/data_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+        <state relative-caret-position="491">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="2" column="35" lean-forward="true" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
         </state>
       </provider>
     </entry>
