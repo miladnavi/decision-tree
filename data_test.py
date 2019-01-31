@@ -21,20 +21,16 @@ x_train, indices = np.unique(np.round(x_train.astype(np.double)), axis=0, return
 x_train = np.vstack((np.array([2, 2, 2, 2]), x_train))
 y_train = data[indices, 4]
 
-<<<<<<< HEAD
-=======
 
 '''
 Initialize the model with a Node from the Node class. Node contains a method to fit the model with training data X_train
 and the corresponding label vector Y_train. Note that X_train contains information about the data type in the first row.
 '''
->>>>>>> de976031c6b36fd25737f735272fdaf839f8f147
 tree = Node()
 tree.fit(x_train, y_train)
 
-<<<<<<< HEAD
 print(tree.predict(X_train[4, :]))
-=======
+
 '''
 After fitting, the model can be used to predict the label of a given instance. 
 '''
@@ -45,4 +41,3 @@ print(tree.predict(instance))
 Access instance attributes
 '''
 print(vars(tree))
->>>>>>> de976031c6b36fd25737f735272fdaf839f8f147
