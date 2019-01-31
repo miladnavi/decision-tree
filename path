@@ -1,0 +1,39 @@
+graph {
+	140286466946384 [label="Attr: petallength
+Split: [1. 2. 3. 4. 5. 6. 7.]
+ Value: {'Iris-setosa': 9, 'Iris-versicolor': 14, 'Iris-virginica': 10}" color=green style=filled]
+	140286466946328 [label="Class: {'Iris-setosa': 5}" color=orange style=filled]
+	140286466946384 -- 140286466946328
+	140286123962888 [label="Class: {'Iris-setosa': 4}" color=orange style=filled]
+	140286466946384 -- 140286123962888
+	140286114420440 [label="Class: {'Iris-versicolor': 1}" color=orange style=filled]
+	140286466946384 -- 140286114420440
+	140286114420384 [label="Attr: sepallength
+Split: [5. 6. 7.]
+ Value: {'Iris-versicolor': 8, 'Iris-virginica': 1}" color=green style=filled]
+	140286466946384 -- 140286114420384
+	140286114422288 [label="Class: {'Iris-versicolor': 5}" color=orange style=filled]
+	140286466946384 -- 140286114422288
+	140286114422232 [label="Class: {'Iris-virginica': 7}" color=orange style=filled]
+	140286466946384 -- 140286114422232
+	140286114421504 [label="Class: {'Iris-virginica': 2}" color=orange style=filled]
+	140286466946384 -- 140286114421504
+	140286467002552 [label="Attr: sepalwidth
+Split: [2. 3.]
+ Value: {'Iris-versicolor': 3, 'Iris-virginica': 1}" color=green style=filled]
+	140286114420384 -- 140286467002552
+	140286111979896 [label="Class: {'Iris-versicolor': 4}" color=orange style=filled]
+	140286114420384 -- 140286111979896
+	140286111981184 [label="Class: {'Iris-versicolor': 1}" color=orange style=filled]
+	140286114420384 -- 140286111981184
+	140286240168368 [label="Attr: petalwidth
+Split: [1. 2.]
+ Value: {'Iris-versicolor': 1, 'Iris-virginica': 1}" color=green style=filled]
+	140286467002552 -- 140286240168368
+	140286111980848 [label="Class: {'Iris-versicolor': 2}" color=orange style=filled]
+	140286467002552 -- 140286111980848
+	140286240122528 [label="Class: {'Iris-versicolor': 1}" color=orange style=filled]
+	140286240168368 -- 140286240122528
+	140286111980120 [label="Class: {'Iris-virginica': 1}" color=orange style=filled]
+	140286240168368 -- 140286111980120
+}
