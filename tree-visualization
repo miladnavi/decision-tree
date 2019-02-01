@@ -1,39 +1,33 @@
 graph {
-	139946362197608 [label="Attr: petallength
-Split: [1. 2. 3. 4. 5. 6. 7.]
+	140595835299432 [label="Attr: petallength
+Split: 2.0
  Value: {'Iris-setosa': 9, 'Iris-versicolor': 14, 'Iris-virginica': 10}" color=green style=filled]
-	139946589021520 [label="Class: {'Iris-setosa': 5}" color=orange style=filled]
-	139946362197608 -- 139946589021520
-	139946589021464 [label="Class: {'Iris-setosa': 4}" color=orange style=filled]
-	139946362197608 -- 139946589021464
-	139946236495688 [label="Class: {'Iris-versicolor': 1}" color=orange style=filled]
-	139946362197608 -- 139946236495688
-	139946236496696 [label="Attr: sepallength
-Split: [5. 6. 7.]
- Value: {'Iris-versicolor': 8, 'Iris-virginica': 1}" color=green style=filled]
-	139946362197608 -- 139946236496696
-	139946236497200 [label="Class: {'Iris-versicolor': 5}" color=orange style=filled]
-	139946362197608 -- 139946236497200
-	139946236495408 [label="Class: {'Iris-virginica': 7}" color=orange style=filled]
-	139946362197608 -- 139946236495408
-	139946236496752 [label="Class: {'Iris-virginica': 2}" color=orange style=filled]
-	139946362197608 -- 139946236496752
-	139946362243336 [label="Attr: sepalwidth
-Split: [2. 3.]
- Value: {'Iris-versicolor': 3, 'Iris-virginica': 1}" color=green style=filled]
-	139946236496696 -- 139946362243336
-	139946234053632 [label="Class: {'Iris-versicolor': 4}" color=orange style=filled]
-	139946236496696 -- 139946234053632
-	139946234054360 [label="Class: {'Iris-versicolor': 1}" color=orange style=filled]
-	139946236496696 -- 139946234054360
-	139946589556520 [label="Attr: petalwidth
-Split: [1. 2.]
+	140595835353408 [label="Attr: petallength
+Split: 5.0
+ Value: {'Iris-versicolor': 14, 'Iris-virginica': 10}" color=green style=filled]
+	140595835299432 -- 140595835353408
+	140595707181880 [label="Class: {'Iris-setosa': 9}" color=orange style=filled]
+	140595835299432 -- 140595707181880
+	140595707179752 [label="Class: {'Iris-virginica': 9}" color=orange style=filled]
+	140595835353408 -- 140595707179752
+	140596062649704 [label="Attr: sepallength
+Split: 5.0
+ Value: {'Iris-versicolor': 14, 'Iris-virginica': 1}" color=green style=filled]
+	140595835353408 -- 140596062649704
+	140596062131480 [label="Class: {'Iris-versicolor': 10}" color=orange style=filled]
+	140596062649704 -- 140596062131480
+	140595706905376 [label="Attr: petalwidth
+Split: 1.0
+ Value: {'Iris-versicolor': 4, 'Iris-virginica': 1}" color=green style=filled]
+	140596062649704 -- 140595706905376
+	140595706920688 [label="Attr: sepalwidth
+Split: 2.5
  Value: {'Iris-versicolor': 1, 'Iris-virginica': 1}" color=green style=filled]
-	139946362243336 -- 139946589556520
-	139946234056488 [label="Class: {'Iris-versicolor': 2}" color=orange style=filled]
-	139946362243336 -- 139946234056488
-	139946362243448 [label="Class: {'Iris-versicolor': 1}" color=orange style=filled]
-	139946589556520 -- 139946362243448
-	139946234055368 [label="Class: {'Iris-virginica': 1}" color=orange style=filled]
-	139946589556520 -- 139946234055368
+	140595706905376 -- 140595706920688
+	140595706918672 [label="Class: {'Iris-versicolor': 3}" color=orange style=filled]
+	140595706905376 -- 140595706918672
+	140595706917496 [label="Class: {'Iris-versicolor': 1}" color=orange style=filled]
+	140595706920688 -- 140595706917496
+	140596062131536 [label="Class: {'Iris-virginica': 1}" color=orange style=filled]
+	140595706920688 -- 140596062131536
 }

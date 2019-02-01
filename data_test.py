@@ -18,7 +18,7 @@ former without duplicates. Un-comment to use either one.
 # :----------- ordinal
 x_train = np.array(data[:, 0:4])
 x_train, indices = np.unique(np.round(x_train.astype(np.double)), axis=0, return_index=True)
-x_train = np.vstack((np.array([2, 2, 2, 2]), x_train))
+x_train = np.vstack((np.array([1, 1, 1, 1]), x_train))
 y_train = data[indices, 4]
 
 
@@ -29,7 +29,7 @@ and the corresponding label vector Y_train. Note that X_train contains informati
 tree = Node()
 tree.fit(x_train, y_train)
 
-print(tree.predict(X_train[4, :]))
+print(tree.predict(x_train[4, :]))
 
 '''
 After fitting, the model can be used to predict the label of a given instance. 

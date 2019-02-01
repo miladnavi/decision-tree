@@ -8,28 +8,17 @@ Data to make examples with
 '''
 data = np.array(pd.read_csv('dataset_61_iris.csv'))
 attr = ["sepallength", "sepalwidth", "petallength", "petalwidth"]
+
 X_train = np.array(data[:, 0:4])
+print(len(X_train))
 X_train, indices = np.unique(np.round(X_train.astype(np.double)), axis=0, return_index=True)
-X_train = np.vstack((np.array([2, 2, 2, 2]), X_train))
+X_train = np.vstack((np.array([1, 1, 1, 1]), X_train))
 Y_train = data[indices, 4]
 
+print(len(X_train))
 tree = Node()
 tree.fit(X_train, Y_train)
 
-"""
-from graphviz import Graph
-g = Graph(format='png')
-g.node(str(id(tree)), 'Attr: ' + str(attr[tree.attr]) + '\nSplit: ' + str(tree.split_criterion) + '\n Value: ' + str(tree.result))
-g.node(str(id(tree.children[0])),  'Split: ' + str(tree.children[0].split_criterion) + '\n Value: ' + str(tree.children[0].result))
-g.node('D', 'Split: ' + str(tree.children[1].split_criterion) + '\n Value: ' + str(tree.children[1].result))
-g.node('E', 'Split: ' + str(tree.children[2].split_criterion) + '\n GiniIndex: ' + str(tree.children[2].result))
-g.node('F', 'Split: ' + str(tree.children[3].split_criterion) + '\n GiniIndex: ' + str(tree.children[3].result))
-g.node('G', 'Split: ' + str(tree.children[4].split_criterion) + '\n GiniIndex: ' + str(tree.children[4].result))
-g.node('H', 'Split: ' + str(tree.children[5].split_criterion) + '\n GiniIndex: ' + str(tree.children[5].result))
-g.node('I', 'Split: ' + str(tree.children[6].split_criterion) + '\n GiniIndex: ' + str(tree.children[6].result))
-g.edge(index1, index2)
-g.render('path', view=True)
-"""
 from graphviz import Graph
 g = Graph(format='png')
 q = queue.Queue()
@@ -61,3 +50,19 @@ while q.empty() == False:
             })
 g.render('tree-visualization', view=True)
 
+
+
+"""
+from graphviz import Graph
+g = Graph(format='png')
+g.node(str(id(tree)), 'Attr: ' + str(attr[tree.attr]) + '\nSplit: ' + str(tree.split_criterion) + '\n Value: ' + str(tree.result))
+g.node(str(id(tree.children[0])),  'Split: ' + str(tree.children[0].split_criterion) + '\n Value: ' + str(tree.children[0].result))
+g.node('D', 'Split: ' + str(tree.children[1].split_criterion) + '\n Value: ' + str(tree.children[1].result))
+g.node('E', 'Split: ' + str(tree.children[2].split_criterion) + '\n GiniIndex: ' + str(tree.children[2].result))
+g.node('F', 'Split: ' + str(tree.children[3].split_criterion) + '\n GiniIndex: ' + str(tree.children[3].result))
+g.node('G', 'Split: ' + str(tree.children[4].split_criterion) + '\n GiniIndex: ' + str(tree.children[4].result))
+g.node('H', 'Split: ' + str(tree.children[5].split_criterion) + '\n GiniIndex: ' + str(tree.children[5].result))
+g.node('I', 'Split: ' + str(tree.children[6].split_criterion) + '\n GiniIndex: ' + str(tree.children[6].result))
+g.edge(index1, index2)
+g.render('path', view=True)
+"""
