@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import queue
 from classifier_py_file import Node
+from graphviz import Graph
 
 '''
 Data to make examples with
@@ -19,7 +20,6 @@ print(len(X_train))
 tree = Node()
 tree.fit(X_train, Y_train)
 
-from graphviz import Graph
 g = Graph(format='png')
 q = queue.Queue()
 g.node(str(id(tree)),

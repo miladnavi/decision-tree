@@ -11,6 +11,7 @@ class Node:
         self.split_criterion = None
         self.children = []
         self.result = None
+        self.pruned = False
 
     @staticmethod
     def _make_children(number):
