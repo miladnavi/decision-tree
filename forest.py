@@ -6,6 +6,7 @@ class Forest:
 
     def __init__(self):
         self.trees = []
+        self.feature_sets = []
 
     def _power_set(self, seq):
         """
@@ -36,17 +37,27 @@ class Forest:
         """
         self.trees    = self._seed_trees(n_trees)
         all_attr_sets = list(self._power_set(range(0, len(x_train[0, :]))))[:-1]  # no empty sets
-        feature_sets  = random.sample(range(1, len(all_attr_sets)), n_trees)
+        self.feature_sets  = random.sample(all_attr_sets, n_trees)
 
-        for tree, feature_set in zip(self.trees, feature_sets):
-            tree.fit(x_train[:, feature_set], y_train)
+        for tree, feature_set in zip(self.trees, self.feature_sets):
+            if len(feature_set) == 1:
+                tree.fit(x_train[:, feature_set].reshape(len(x_train), 1), y_train)
+            else:
+                tree.fit(x_train[:, feature_set], y_train)
 
     def ask_forest_for_guidance(self, instance):
         """
         :param instance: instance w/o label
         :return: predicted label
         """
-        votes = [max(tree.predict(instance), key=tree.predict(instance).get) for tree in self.trees]
+        ############################
+        # 1. For each tree and the feature set that was used, we predict the classes given the relevant features of the
+        #    instance
+        # 2. We take the majority vote for each tree
+        # 3. We take the majority vote over all trees to give the same weight to each tree
+        ############################
+        votes = [max(tree.predict(instance[feature_set]), key=tree.predict(instance[feature_set]).get)
+                 for tree, feature_set in zip(self.trees, self.feature_sets)]
 
         # only return the vote with the highest count
         return max(votes, key=votes.count)

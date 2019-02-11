@@ -1,6 +1,45 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="31">
+            <item index="0" class="java.lang.String" itemvalue="panda" />
+            <item index="1" class="java.lang.String" itemvalue="duplicity" />
+            <item index="2" class="java.lang.String" itemvalue="yum-metadata-parser" />
+            <item index="3" class="java.lang.String" itemvalue="crcmod" />
+            <item index="4" class="java.lang.String" itemvalue="pycairo" />
+            <item index="5" class="java.lang.String" itemvalue="numpy" />
+            <item index="6" class="java.lang.String" itemvalue="pysqlite" />
+            <item index="7" class="java.lang.String" itemvalue="SecretStorage" />
+            <item index="8" class="java.lang.String" itemvalue="urlgrabber" />
+            <item index="9" class="java.lang.String" itemvalue="rpm" />
+            <item index="10" class="java.lang.String" itemvalue="pyxdg" />
+            <item index="11" class="java.lang.String" itemvalue="fasteners" />
+            <item index="12" class="java.lang.String" itemvalue="monotonic" />
+            <item index="13" class="java.lang.String" itemvalue="pyliblzma" />
+            <item index="14" class="java.lang.String" itemvalue="pygobject" />
+            <item index="15" class="java.lang.String" itemvalue="keyring" />
+            <item index="16" class="java.lang.String" itemvalue="libvirt-python" />
+            <item index="17" class="java.lang.String" itemvalue="PAM" />
+            <item index="18" class="java.lang.String" itemvalue="webencodings" />
+            <item index="19" class="java.lang.String" itemvalue="beautifulsoup4" />
+            <item index="20" class="java.lang.String" itemvalue="ipaddress" />
+            <item index="21" class="java.lang.String" itemvalue="html5lib" />
+            <item index="22" class="java.lang.String" itemvalue="pycurl" />
+            <item index="23" class="java.lang.String" itemvalue="Pygments" />
+            <item index="24" class="java.lang.String" itemvalue="pyOpenSSL" />
+            <item index="25" class="java.lang.String" itemvalue="cryptography" />
+            <item index="26" class="java.lang.String" itemvalue="lxml" />
+            <item index="27" class="java.lang.String" itemvalue="olefile" />
+            <item index="28" class="java.lang.String" itemvalue="pexpect" />
+            <item index="29" class="java.lang.String" itemvalue="keyrings.alt" />
+            <item index="30" class="java.lang.String" itemvalue="Pillow" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
     <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
       <option name="ignoredErrors">
         <list>

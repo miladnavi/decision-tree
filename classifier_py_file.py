@@ -76,8 +76,10 @@ class Node:
         :param y_train: training labels
         :return: Fit all trees in trees. No return value
         """
-        x_data = x_train[1:, :]
-        unique, counts = np.unique(y_train, return_counts=True)
+
+        unique, counts  = np.unique(y_train, return_counts=True)
+        x_data, indices = np.unique(x_train[1:, :], axis=0, return_index=True)
+        y_data          = y_train[indices]
         self.result = dict(zip(unique, counts))
 
         if len(self.result) == 1:
@@ -85,7 +87,7 @@ class Node:
             # print(self.result)
 
         else:
-            self.attr, self.split_criterion = self._find_attr(x_train, y_train)
+            self.attr, self.split_criterion = self._find_attr(np.vstack((x_train[0, :], x_data)), y_data)
             self.data_type = x_train[0, self.attr]
 
             if self.data_type == 1:
@@ -95,8 +97,8 @@ class Node:
                 indices_right = x_data[:, self.attr] <= self.split_criterion  # right split, w/o first row
 
                 # concatenate the Information about the data_type from the first row
-                self.children[0].fit(np.vstack((x_train[0, :], x_data[indices_left, :])), y_train[indices_left])
-                self.children[1].fit(np.vstack((x_train[0, :], x_data[indices_right, :])), y_train[indices_right])
+                self.children[0].fit(np.vstack((x_train[0, :], x_data[indices_left, :])), y_data[indices_left])
+                self.children[1].fit(np.vstack((x_train[0, :], x_data[indices_right, :])), y_data[indices_right])
 
             if self.data_type == 2:
                 # one child for every unique label in attr
@@ -105,13 +107,14 @@ class Node:
                 # Iterate over all Nodes in children and call fit with data corresponding to the class label in attr
                 for node, clss in zip(self.children, self.split_criterion):
                     node.fit(np.vstack((x_train[0, :], x_data[x_data[:, self.attr] == clss, :])),
-                             y_train[x_data[:, self.attr] == clss])
+                             y_data[x_data[:, self.attr] == clss])
 
     def predict(self, instance):
         """
         :param instance: training instance
         :return: result dict
         """
+        instance = instance.reshape(len(instance))
         if not self.leaf:
 
             if self.data_type == 1:
@@ -126,4 +129,3 @@ class Node:
                 return self.children[clss].predict(instance)
         else:
             return self.result
-
