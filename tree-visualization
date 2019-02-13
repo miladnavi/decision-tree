@@ -1,33 +1,33 @@
 graph {
-	139711683671320 [label="Attr: petallength
+	139986927199568 [label="Attr: petallength
 Split: 2.0
  Value: {'Iris-setosa': 9, 'Iris-versicolor': 14, 'Iris-virginica': 10}" color=green style=filled]
-	139712036169488 [label="Attr: petallength
+	139987279697680 [label="Attr: petallength
 Split: 5.0
  Value: {'Iris-versicolor': 14, 'Iris-virginica': 10}" color=green style=filled]
-	139711683671320 -- 139712036169488
-	139711809387152 [label="Class: {'Iris-setosa': 9}" color=orange style=filled]
-	139711683671320 -- 139711809387152
-	139711683635800 [label="Class: {'Iris-virginica': 9}" color=orange style=filled]
-	139712036169488 -- 139711683635800
-	139711809341424 [label="Attr: sepallength
+	139986927199568 -- 139987279697680
+	139986927259096 [label="Class: {'Iris-setosa': 9}" color=orange style=filled]
+	139986927199568 -- 139986927259096
+	139986927259544 [label="Class: {'Iris-virginica': 9}" color=orange style=filled]
+	139987279697680 -- 139986927259544
+	139987052919440 [label="Attr: sepallength
 Split: 5.0
  Value: {'Iris-versicolor': 14, 'Iris-virginica': 1}" color=green style=filled]
-	139712036169488 -- 139711809341424
-	139712036700112 [label="Class: {'Iris-versicolor': 10}" color=orange style=filled]
-	139711809341424 -- 139712036700112
-	139711680860056 [label="Attr: petalwidth
+	139987279697680 -- 139987052919440
+	139987279749304 [label="Class: {'Iris-versicolor': 10}" color=orange style=filled]
+	139987052919440 -- 139987279749304
+	139986924448792 [label="Attr: petalwidth
 Split: 1.0
  Value: {'Iris-versicolor': 4, 'Iris-virginica': 1}" color=green style=filled]
-	139711809341424 -- 139711680860056
-	139711681002464 [label="Attr: sepalwidth
+	139987052919440 -- 139986924448792
+	139986924763624 [label="Attr: sepalwidth
 Split: 2.5
  Value: {'Iris-versicolor': 1, 'Iris-virginica': 1}" color=green style=filled]
-	139711680860056 -- 139711681002464
-	139711683635744 [label="Class: {'Iris-versicolor': 3}" color=orange style=filled]
-	139711680860056 -- 139711683635744
-	139711680859664 [label="Class: {'Iris-versicolor': 1}" color=orange style=filled]
-	139711681002464 -- 139711680859664
-	139711680857424 [label="Class: {'Iris-virginica': 1}" color=orange style=filled]
-	139711681002464 -- 139711680857424
+	139986924448792 -- 139986924763624
+	139987279697624 [label="Class: {'Iris-versicolor': 3}" color=orange style=filled]
+	139986924448792 -- 139987279697624
+	139986924390888 [label="Class: {'Iris-versicolor': 1}" color=orange style=filled]
+	139986924763624 -- 139986924390888
+	139986924389208 [label="Class: {'Iris-virginica': 1}" color=orange style=filled]
+	139986924763624 -- 139986924389208
 }

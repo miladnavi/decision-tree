@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import queue
 from classifier_py_file import Node
+from visualization import tree_visualizer
 from graphviz import Graph
 
 
@@ -22,9 +23,8 @@ Training model
 tree = Node()
 tree.fit(X_train, Y_train)
 
-#print(tree.result.values())
+# Number of all labels which we data set have
 label_number = len(set(Y_train))
-#print(len(set(Y_train)))
 
 '''
 Add root children to the queue
@@ -35,20 +35,17 @@ for child in tree.children:
         tree_queue.put(child)
 
 '''
-Start to pruning with compare each node and its leafs miss-classification error
+Start to pruning with compare each node and its leafs miss-classification error(BFS)
 '''
-c=0
-while tree_queue.empty() == False:
-    c+=1
-    print(c)
+while tree_queue.empty() is False:
     tree_node = tree_queue.get()
     classification_err_without_pruning = 0
     leafs_queue = queue.Queue()
     node_queue = queue.Queue()
     node_queue.put(tree_node)
-    while node_queue.empty() == False:
+    while node_queue.empty() is False:
         node = node_queue.get()
-        if node.leaf == False:
+        if node.leaf is False:
             for child in node.children:
                 node_queue.put(child)
         else:
@@ -60,7 +57,7 @@ while tree_queue.empty() == False:
     '''
     Calculate the sum of leafs miss-classification errors without pruning
     '''
-    while leafs_queue.empty() == False:
+    while leafs_queue.empty() is False:
         leaf = leafs_queue.get()
         classification_err_without_pruning += (sum(leaf.result.values()) / sum(tree_node.result.values())) * (sum(leaf.result.values()) - max(leaf.result.values()) + label_number - 1) / (sum(leaf.result.values()) + label_number)
     '''
@@ -79,35 +76,6 @@ while tree_queue.empty() == False:
                 tree_queue.put(child)
 
 
-g = Graph(format='png')
-q = queue.Queue()
-g.node(str(id(tree)),
-       'Attr: ' + str(attr[tree.attr]) + '\nSplit: ' + str(tree.split_criterion) + '\n Value: ' + str(tree.result), style='filled', color='green')
+# Visualization the pruned tree
+tree_visualizer(tree)
 
-for idx, val in enumerate(tree.children):
-    q.put({
-        "root": id(tree),
-        "node": val,
-    })
-
-while q.empty() == False:
-    node = q.get()
-    if node["node"].leaf is False:
-        g.node(str(id(node["node"])),
-               'Attr: ' + str(attr[node["node"].attr]) + '\nSplit: ' + str(
-                   node["node"].split_criterion) + '\n Value: ' + str(node["node"].result), style='filled', color='green')
-        g.edge(str(node["root"]), str(id(node["node"])))
-    elif node["node"].pruned is True:
-        g.node(str(id(node["node"])), 'Class: ' + str(node["node"].result), style='filled', color='red')
-        g.edge(str(node["root"]), str(id(node["node"])))
-    else:
-        g.node(str(id(node["node"])), 'Class: ' + str(node["node"].result), style='filled', color='orange')
-        g.edge(str(node["root"]), str(id(node["node"])))
-
-    if len(node["node"].children) != 0:
-        for idx, val in enumerate(node["node"].children):
-            q.put({
-                "root": id(node["node"]),
-                "node": val,
-            })
-g.render('tree-min-err-pruned', view=True)
