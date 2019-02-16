@@ -1,0 +1,27 @@
+graph {
+	140316698055736 [label="Attr: petallength
+Split: 2.5999999999999996
+ Value: {'Iris-setosa': 30, 'Iris-versicolor': 35, 'Iris-virginica': 34}" color=green style=filled]
+	140316698055288 [label="Attr: petalwidth
+Split: 1.7
+ Value: {'Iris-versicolor': 35, 'Iris-virginica': 34}" color=green style=filled]
+	140316698055736 -- 140316698055288
+	140316697773672 [label="Class: {'Iris-setosa': 30}" color=orange style=filled]
+	140316698055736 -- 140316697773672
+	140316698140120 [label="Class: {'Iris-versicolor': 1, 'Iris-virginica': 30}" color=red style=filled]
+	140316698055288 -- 140316698140120
+	140316698138328 [label="Attr: petallength
+Split: 4.95
+ Value: {'Iris-versicolor': 34, 'Iris-virginica': 4}" color=green style=filled]
+	140316698055288 -- 140316698138328
+	140316697795832 [label="Attr: petalwidth
+Split: 1.5
+ Value: {'Iris-versicolor': 2, 'Iris-virginica': 3}" color=green style=filled]
+	140316698138328 -- 140316697795832
+	140317053165640 [label="Class: {'Iris-versicolor': 32, 'Iris-virginica': 1}" color=red style=filled]
+	140316698138328 -- 140317053165640
+	140316698203304 [label="Class: {'Iris-versicolor': 2}" color=orange style=filled]
+	140316697795832 -- 140316698203304
+	140316698027680 [label="Class: {'Iris-virginica': 3}" color=orange style=filled]
+	140316697795832 -- 140316698027680
+}

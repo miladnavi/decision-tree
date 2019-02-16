@@ -1,0 +1,15 @@
+graph {
+	140316697808008 [label="Attr: petallength
+Split: 2.5999999999999996
+ Value: {'Iris-setosa': 30, 'Iris-versicolor': 35, 'Iris-virginica': 34}" color=green style=filled]
+	140316697837296 [label="Attr: petalwidth
+Split: 1.7
+ Value: {'Iris-versicolor': 35, 'Iris-virginica': 34}" color=green style=filled]
+	140316697808008 -- 140316697837296
+	140316697856992 [label="Class: {'Iris-setosa': 30}" color=orange style=filled]
+	140316697808008 -- 140316697856992
+	140316697842520 [label="Class: {'Iris-versicolor': 1, 'Iris-virginica': 30}" color=red style=filled]
+	140316697837296 -- 140316697842520
+	140316697844480 [label="Class: {'Iris-versicolor': 34, 'Iris-virginica': 4}" color=red style=filled]
+	140316697837296 -- 140316697844480
+}

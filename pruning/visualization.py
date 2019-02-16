@@ -3,10 +3,9 @@ from graphviz import Graph
 
 attr = ["sepallength", "sepalwidth", "petallength", "petalwidth"]
 
-'''
-Visualize tree 
-'''
-def tree_visualizer (tree):
+
+# Visualize tree
+def tree_visualizer(tree, pruning_method):
     g = Graph(format='png')
     q = queue.Queue()
     g.node(str(id(tree)),
@@ -40,4 +39,4 @@ def tree_visualizer (tree):
                     "root": id(node["node"]),
                     "node": val,
                 })
-    g.render('tree-min-err-pruned', view=True)
+    g.render(pruning_method, view=True)
