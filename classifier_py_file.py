@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-
+from dict_argopt import argmin, argmax
 
 class Node:
 
@@ -128,4 +128,4 @@ class Node:
                 clss = np.int(np.where(instance[self.attr] == self.split_criterion)[0])
                 return self.children[clss].predict(instance)
         else:
-            return self.result
+            return argmax(self.result)

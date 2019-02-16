@@ -9,14 +9,9 @@ In this Project our goal is not only to create a classifier but also we are tryi
 There are some approaches to tackle the generalisation problem and prevent overfitting. One of these methods which we used in this project called the pruning method. As the method's name explains itself, this method try to determine useless sub-trees (branches) and remove them and converts the nodes to the leaves. At the end it leads up to reduce the `misclassification error` and the `tree complexity`. We implemented three different pruning methods in this project: `Error-Complexity Pruning` , `Minimum-Error Pruning` and `Pessimistic-Error Pruning`
 
 ```
-Note: It reduces the misclassfication error on test-dataset and not on training-dateset.
+Note: Pruning reduces the miss-classfication error on test-dataset and not on training-dateset.
 ```
 
-1. *Error-Complexity Pruning:*
-
-2. *Minimum-Error Pruning:*
-
-3. *Pessimistic-Error Pruning:*
 
 
 
