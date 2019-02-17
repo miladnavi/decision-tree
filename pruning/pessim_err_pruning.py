@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import queue
+import time
 from copy import deepcopy
 from math import sqrt
 from dict_argopt import argmin, argmax
@@ -42,7 +43,8 @@ def err_rate(tree):
     print('Node number: ', nodes_counter)
 
 
-def pessim_err_pruning(tree, test_data):
+def pessim_err_pruning(tree, test_data, argv):
+    start = time.time()
     # Add root children to the queue
     tree_queue = queue.Queue()
     for child in tree.children:
@@ -84,11 +86,13 @@ def pessim_err_pruning(tree, test_data):
             for child in tree_node.children:
                 if child.leaf is False:
                     tree_queue.put(child)
+    end = time.time()
+    print('Time Complexity: ', end - start)
 
     # Calculating error rate
     err_rate(tree)
     # Predict test data and print result
     predict_result(tree, test_data)
     # Visualization the pruned tree
-    tree_visualizer(tree, 'tree-pessim-err-pruned')
+    tree_visualizer(tree, 'tree-pessim-err-pruned', argv)
 

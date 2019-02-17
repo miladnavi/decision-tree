@@ -1,11 +1,24 @@
 import queue
 from graphviz import Graph
 
-attr = ["sepallength", "sepalwidth", "petallength", "petalwidth"]
+attr = []
+attr1 = ["sepallength", "sepalwidth", "petallength", "petalwidth"]
+attr2 = ["Tempreture", "Pump_Pressure", "inlet_Pressure", "Oulet_Pressure", "Flowrate"]
+attr3 = ["age", "menopause", "tumor-size", "inv-nodes", "node-caps", "deg-malig", "breast", "breast-quad", "irradiat"]
+attr4 = ["V1", "V2", "V3", "V4", "V5", "V6", "V7"]
 
 
 # Visualize tree
-def tree_visualizer(tree, pruning_method):
+def tree_visualizer(tree, pruning_method, argv):
+    if argv is 1 or argv is None:
+        attr = attr1
+    elif argv is 2:
+        attr = attr2
+    elif argv is 3:
+        attr = attr3
+    elif argv is 4:
+        attr = attr4
+
     g = Graph(format='png')
     q = queue.Queue()
     g.node(str(id(tree)),

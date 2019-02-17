@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import queue
+import time
 from classifier_py_file import Node
 from visualization import tree_visualizer
 from predict import predict_result
@@ -37,7 +38,8 @@ def err_rate(tree, label_number):
     print('Node number: ', nodes_counter)
 
 
-def min_err_pruning(tree, label_number, test_data):
+def min_err_pruning(tree, label_number, test_data, argv):
+    start = time.time()
     # Add root children to the queue
     tree_queue = queue.Queue()
     for child in tree.children:
@@ -79,10 +81,12 @@ def min_err_pruning(tree, label_number, test_data):
             for child in tree_node.children:
                 if child.leaf is False:
                     tree_queue.put(child)
+    end = time.time()
+    print('Time complexity: ', end - start)
 
     # Calculating error rate
     err_rate(tree, label_number)
     # Predict test data and print result
     predict_result(tree, test_data)
     # Visualization the pruned tree
-    tree_visualizer(tree, 'tree-min-err-pruned')
+    tree_visualizer(tree, 'tree-min-err-pruned', argv)

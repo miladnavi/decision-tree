@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import queue
+import time
 from copy import deepcopy
 from math import sqrt
 from dict_argopt import argmin, argmax
@@ -39,7 +40,8 @@ def err_rate(tree, X_train):
     print('Node number: ', nodes_counter)
 
 
-def err_complexity_pruning(tree, Y_test, X_train, X_test, test_data):
+def err_complexity_pruning(tree, Y_test, X_train, X_test, test_data, argv):
+    start = time.time()
     # Pruning trees until there is no subtree to prune
     pruned_trees = [tree]
     eligible_tree = queue.Queue()
@@ -154,11 +156,12 @@ def err_complexity_pruning(tree, Y_test, X_train, X_test, test_data):
             if leafs_count < best_pruned_tree_leafs_count: best_pruned_tree = tree
     print('Best pruned tree found, with standard error: ' + str(standard_error[best_pruned_tree]) + ' and ' + str(
         best_pruned_tree_leafs_count - 1) + ' leafs.')
+    end = time.time()
+    print('Time Complexity: ', end - start)
 
     # Calculating error rate
     err_rate(best_pruned_tree, X_train)
-
     # Predict test data and print result
     predict_result(best_pruned_tree, test_data)
 
-    tree_visualizer(best_pruned_tree, 'tree-err-comp-pruned')
+    tree_visualizer(best_pruned_tree, 'tree-err-comp-pruned', argv)
