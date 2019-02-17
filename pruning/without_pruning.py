@@ -38,7 +38,7 @@ def err_rate(tree, label_number):
     print('Node number: ', nodes_counter)
 
 
-def tree_without_pruning(tree, test_data, label_number):
+def tree_without_pruning(tree, test_data, label_number, argv):
     # Calculating error rate
     err_rate(tree, label_number)
 
@@ -46,4 +46,4 @@ def tree_without_pruning(tree, test_data, label_number):
     predict_result(tree, test_data)
 
     # Visualization tree without pruning
-    tree_visualizer(tree, 'tree-without-pruning')
+    tree_visualizer(tree, 'tree-without-pruning', argv)
