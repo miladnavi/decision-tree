@@ -5,7 +5,7 @@ from forest import Forest
 
 # :-------------------------------------------
 data = np.array(pd.read_csv('dataset_61_iris.csv'))
-
+# data = np.array(pd.read_csv('dataset_13_breast-cancer.csv'))
 '''
 Two examples. One with the original numerical data from the iris data set. The second one is a discretization of the 
 former without duplicates. Un-comment to use either one.
@@ -17,10 +17,15 @@ former without duplicates. Un-comment to use either one.
 
 
 # :----------- ordinal
-x_train = np.array(data[:, 0:4])
-x_train = np.round(x_train.astype(np.double))
-x_train = np.vstack((np.array([2, 2, 2, 2]), x_train))
-y_train = data[:, 4]
+# x_train = np.array(data[:, 0:4])
+# x_train = np.round(x_train.astype(np.double))
+# x_train = np.vstack((np.array([2, 2, 2, 2]), x_train))
+# y_train = data[:, 4]
+
+
+x_train = np.array(data[:, 0:9])
+x_train = np.vstack((np.array([2, 2, 2, 2, 2, 2, 2, 2, 2]), x_train))
+y_train = data[:, 9]
 
 
 '''
@@ -28,13 +33,12 @@ Initialize the model with a Node from the Node class. Node contains a method to 
 and the corresponding label vector Y_train. Note that X_train contains information about the data type in the first row.
 '''
 tree = Node()
-
-# tree.fit(x_train[:, [1]], y_train)
+tree.fit(x_train, y_train)
 
 '''
 After fitting, the model can be used to predict the label of a given instance. 
 '''
-instance = x_train[4, :]
+# instance = x_train[4, :]
 # print(tree.predict(instance))
 
 '''
@@ -47,11 +51,11 @@ Access instance attributes
 Decision Forest Test
 '''
 
-forest = Forest()
-forest.nurture_forest(x_train, y_train, 5)
+# forest = Forest()
+# forest.nurture_forest(x_train, y_train, 5)
 
 
-print(forest.ask_forest_for_guidance(instance))
+# print(forest.ask_forest_for_guidance(instance))
 
 # print(forest.trees[0].predict(instance))
 # print(forest.trees[1].predict(instance))
@@ -64,3 +68,4 @@ print(forest.ask_forest_for_guidance(instance))
 # print(forest.ask_forest_for_guidance(instance))
 
 # print(x_train[:, [0]].reshape(len(x_train[:, [0]]), 1))
+

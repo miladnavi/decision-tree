@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from dict_argopt import argmin, argmax
+
 
 class Node:
 
@@ -76,9 +76,8 @@ class Node:
         :param y_train: training labels
         :return: Fit all trees in trees. No return value
         """
-
         unique, counts  = np.unique(y_train, return_counts=True)
-        x_data, indices = np.unique(x_train[1:, :], axis=0, return_index=True)
+        x_data, indices = np.unique(np.array(x_train[1:, :].astype(np.float64)), axis=0, return_index=True)
         y_data          = y_train[indices]
         self.result = dict(zip(unique, counts))
 
@@ -93,7 +92,7 @@ class Node:
             if self.data_type == 1:
                 # only two Nodes, one for each side of the best split we found
                 self.children = self._make_children(2)
-                indices_left = x_data[:, self.attr] > self.split_criterion  # left split, w/o first row
+                indices_left  = x_data[:, self.attr] > self.split_criterion  # left split, w/o first row
                 indices_right = x_data[:, self.attr] <= self.split_criterion  # right split, w/o first row
 
                 # concatenate the Information about the data_type from the first row
@@ -128,4 +127,4 @@ class Node:
                 clss = np.int(np.where(instance[self.attr] == self.split_criterion)[0])
                 return self.children[clss].predict(instance)
         else:
-            return argmax(self.result)
+            return self.result
