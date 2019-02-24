@@ -128,3 +128,23 @@ class Node:
                 return self.children[clss].predict(instance)
         else:
             return self.result
+
+
+def pre_process(x_data, y_data, data_types):
+
+
+    # x_train = np.vstack((np.array(data_types), x_data))
+
+
+
+
+    # Check if there is a string in x_data
+    if 1 == len(data_types):
+        x_data.reshape(len(x_data), 1)
+
+    for it in range(0, len(data_types)):
+        if 2 == data_types[it] & any(isinstance(x, str) for x in x_data[:, it]):
+            x_data[:, it] = np.array(pd.factorize(x_data[:, it])[0])
+
+
+
