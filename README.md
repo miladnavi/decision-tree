@@ -16,7 +16,81 @@ Note: Pruning reduces the miss-classfication error on test-dataset and not on tr
 
 
 ## Getting Start
+First clone or download the project and locate it wherever you want on your machine.
 
 ### Prerequisites
+You need python > 3.0 (recommended 3.6.7):
+* [Python](https://www.python.org/download/releases/3.0/)
+
+Navigate with your terminal to the project dir and install the project's dependencies:
+
+```
+pip install -r requirements.txt
+```
 
 ### Running
+
+#### Pruning
+
+Navigate with your terminal to the project dir and then in to the sub-dir `pruning` and run following cmd:
+```
+python main.py 1
+```
+
+There are 4 argument variables possible (1, 2, 3, 4) which trained the model with different data-set:<br />
+
+1. [Iris](https://github.com/miladnavi/decision-tree/blob/master/dataset_61_iris.csv)
+2. [Pump Status](https://github.com/miladnavi/decision-tree/blob/master/dataset_pump-status.csv)
+3. [Breast Cancer](https://github.com/miladnavi/decision-tree/blob/master/dataset_13_breast-cancer.csv)
+4. [LED Display](https://github.com/miladnavi/decision-tree/blob/master/dataset_LED-display-domain-7digit.csv)
+
+#### Forest
+
+
+### Add new data-set
+
+#### Pruning
+Navigate with your terminal to the project dir and then in to the sub-dir `pruning` and this after last elif at the top and increase the number of elif:
+
+```
+elif argv is 5:
+    # Data to make examples with
+    data = np.array(pd.read_csv('../dataset_LED-display-domain-7digit.csv'))
+    np.random.shuffle(data)
+    X_train = np.array(data[:460, 0:7])
+    X_train = np.vstack((np.array([2, 2, 2, 2, 2, 2, 2]), X_train))
+    X_test = np.array(data[461:501, 0:7])
+    Y_train = data[:460, 7]
+    Y_test = data[461:501, 7]
+    test_data = np.array(data[461:, :])
+
+    # Training model
+    tree1 = Node()
+    start = time.time()
+    tree1.fit(X_train, Y_train)
+    end = time.time()
+    print('Training model time complexity: ', end - start)
+    tree2 = Node()
+    tree2.fit(X_train, Y_train)
+    tree3 = Node()
+    tree3.fit(X_train, Y_train)
+
+    # Number of all labels which we data set have
+    label_number = len(set(Y_train))
+```
+
+import you data:
+
+```
+data = np.array(pd.read_csv('../dataset_LED-display-domain-7digit.csv'))
+```
+
+Determinate the number of the training data and number of attribute (in thins example is respectively: 460, 7):
+
+```
+X_train = np.array(data[:460, 0:7])
+```
+Determinate the kind of attributes (1 : `nominal` and 2 : `numeric`):
+```
+X_train = np.vstack((np.array([2, 2, 2, 2, 2, 2, 2]), X_train))
+```
