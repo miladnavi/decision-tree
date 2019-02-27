@@ -70,15 +70,14 @@ class Node:
 
         return ig.index(max(ig)), sp[ig.index(max(ig))]
 
-    def fit(self, x_train, y_train):
+    def fit(self, x_data, y_data):
         """
-        :param x_train: training set with data types in first row
-        :param y_train: training labels
+        :param x_data: training set with data types in first row
+        :param y_data: training labels
         :return: Fit all trees in trees. No return value
         """
-        unique, counts  = np.unique(y_train, return_counts=True)
-        x_data, indices = np.unique(np.array(x_train[1:, :].astype(np.float64)), axis=0, return_index=True)
-        y_data          = y_train[indices]
+        unique, counts  = np.unique(y_data, return_counts=True)
+
         self.result = dict(zip(unique, counts))
 
         if len(self.result) == 1:
@@ -86,8 +85,8 @@ class Node:
             # print(self.result)
 
         else:
-            self.attr, self.split_criterion = self._find_attr(np.vstack((x_train[0, :], x_data)), y_data)
-            self.data_type = x_train[0, self.attr]
+            self.attr, self.split_criterion = self._find_attr(np.vstack((x_data[0, :], x_data)), y_data)
+            self.data_type = x_data[0, self.attr]
 
             if self.data_type == 1:
                 # only two Nodes, one for each side of the best split we found
@@ -96,8 +95,8 @@ class Node:
                 indices_right = x_data[:, self.attr] <= self.split_criterion  # right split, w/o first row
 
                 # concatenate the Information about the data_type from the first row
-                self.children[0].fit(np.vstack((x_train[0, :], x_data[indices_left, :])), y_data[indices_left])
-                self.children[1].fit(np.vstack((x_train[0, :], x_data[indices_right, :])), y_data[indices_right])
+                self.children[0].fit(np.vstack((x_data[0, :], x_data[indices_left, :])), y_data[indices_left])
+                self.children[1].fit(np.vstack((x_data[0, :], x_data[indices_right, :])), y_data[indices_right])
 
             if self.data_type == 2:
                 # one child for every unique label in attr
@@ -105,7 +104,7 @@ class Node:
 
                 # Iterate over all Nodes in children and call fit with data corresponding to the class label in attr
                 for node, clss in zip(self.children, self.split_criterion):
-                    node.fit(np.vstack((x_train[0, :], x_data[x_data[:, self.attr] == clss, :])),
+                    node.fit(np.vstack((x_data[0, :], x_data[x_data[:, self.attr] == clss, :])),
                              y_data[x_data[:, self.attr] == clss])
 
     def predict(self, instance):
@@ -132,19 +131,21 @@ class Node:
 
 def pre_process(x_data, y_data, data_types):
 
+    x      = x_data.reshape(len(x_data), len(data_types))  # in case x has dim 1
+    y      = y_data
+    tmp    = np.column_stack((x, y))
+    length = len(tmp[:, 0])
+    m      = np.empty((length, length))
+    bmp    = [True for _ in data_types] + [False]
 
-    # x_train = np.vstack((np.array(data_types), x_data))
+    for it in range(len(data_types) + 1):
+        if any(isinstance(k, str) for k in tmp[:, it]):
+            tmp[:, it] = np.array(pd.factorize(tmp[:, it])[0])
 
+    for i in range(length):
+        for j in range(length):
+            m[i, j] = ((tmp[i, :] == tmp[j, :]) == bmp).all()
 
+    correct_indices = [ele == 0 for ele in sum(m)]
 
-
-    # Check if there is a string in x_data
-    if 1 == len(data_types):
-        x_data.reshape(len(x_data), 1)
-
-    for it in range(0, len(data_types)):
-        if 2 == data_types[it] & any(isinstance(x, str) for x in x_data[:, it]):
-            x_data[:, it] = np.array(pd.factorize(x_data[:, it])[0])
-
-
-
+    return np.row_stack((data_types, x[correct_indices, :])), np.array(y[correct_indices])

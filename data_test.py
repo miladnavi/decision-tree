@@ -1,11 +1,13 @@
 import numpy as np
 import pandas as pd
 from classifier_py_file import Node
+from classifier_py_file import pre_process
+
 from forest import Forest
 
 # :-------------------------------------------
-data = np.array(pd.read_csv('dataset_61_iris.csv'))
-# data = np.array(pd.read_csv('dataset_13_breast-cancer.csv'))
+# data = np.array(pd.read_csv('dataset_61_iris.csv'))
+data = np.array(pd.read_csv('dataset_13_breast-cancer.csv'))
 '''
 Two examples. One with the original numerical data from the iris data set. The second one is a discretization of the 
 former without duplicates. Un-comment to use either one.
@@ -24,16 +26,20 @@ former without duplicates. Un-comment to use either one.
 
 
 x_train = np.array(data[:, 0:9])
-x_train = np.vstack((np.array([2, 2, 2, 2, 2, 2, 2, 2, 2]), x_train))
+#  x_train = np.vstack((np.array([2, 2, 2, 2, 2, 2, 2, 2, 2]), x_train))
 y_train = data[:, 9]
+
+x, y = pre_process(x_train[:, 0], y_train, [2])
+
+print(x)
 
 
 '''
 Initialize the model with a Node from the Node class. Node contains a method to fit the model with training data X_train
 and the corresponding label vector Y_train. Note that X_train contains information about the data type in the first row.
 '''
-tree = Node()
-tree.fit(x_train, y_train)
+# tree = Node()
+# tree.fit(x_train, y_train)
 
 '''
 After fitting, the model can be used to predict the label of a given instance. 
