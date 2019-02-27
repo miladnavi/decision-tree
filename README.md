@@ -50,7 +50,7 @@ There are 4 argument variables possible (1, 2, 3, 4) which trained the model wit
 ### Add new data-set
 
 #### Pruning
-Navigate with your terminal to the project dir and then in to the sub-dir `pruning` and this after last elif at the top and increase the number of elif:
+Navigate to the project dir and then in to the sub-dir `pruning`  in `main.py` file and this after last elif at the top and increase the number of elif:
 
 ```
 elif argv is 5:
@@ -85,12 +85,29 @@ import you data:
 data = np.array(pd.read_csv('../dataset_LED-display-domain-7digit.csv'))
 ```
 
-Determinate the number of the training data and number of attribute (in thins example is respectively: 460, 7):
-
+Determinate the number of the training data and number of attribute (in this example is respectively: 460, 7):
 ```
 X_train = np.array(data[:460, 0:7])
 ```
+
 Determinate the kind of attributes (1 : `nominal` and 2 : `numeric`):
 ```
 X_train = np.vstack((np.array([2, 2, 2, 2, 2, 2, 2]), X_train))
+```
+
+Determinate the number of the test data and number of attribute:
+```
+X_test = np.array(data[461:501, 0:7])
+```
+
+Determinate the test date for calculating Standard error `Error Complexity Pruning`  (in this example is respectively: 461:501, 0:7):
+```
+test_data = np.array(data[461:, :])
+```
+Now go to file `visualization.py` in `pruning` dir and proportional your elif number in your `main.py` add data's attribute's name in new array and new eleif:
+```
+attr4 = ["V1", "V2", "V3", "V4", "V5", "V6", "V7"]
+
+elif argv is 4:
+        attr = attr4
 ```
