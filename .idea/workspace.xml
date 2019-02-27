@@ -90,6 +90,7 @@
       <find>print</find>
       <find>resha</find>
       <find>reshape</find>
+      <find>unique</find>
     </findStrings>
   </component>
   <component name="Git.Settings">

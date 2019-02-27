@@ -147,5 +147,4 @@ def pre_process(x_data, y_data, data_types):
             m[i, j] = ((tmp[i, :] == tmp[j, :]) == bmp).all()
 
     correct_indices = [ele == 0 for ele in sum(m)]
-
     return np.row_stack((data_types, x[correct_indices, :])), np.array(y[correct_indices])
