@@ -122,8 +122,11 @@ class Node:
                     return self.children[1].predict(instance)
 
             if self.data_type == 2:
-                clss = np.int(np.where(instance[self.attr] == self.split_criterion)[0])
-                return self.children[clss].predict(instance)
+                if 0 < len(np.where(instance[self.attr] == self.split_criterion)[0]):
+                    clss = np.int(np.where(instance[self.attr] == self.split_criterion)[0])
+                    return self.children[clss].predict(instance)
+                else:
+                    return self.result
         else:
             return self.result
 
