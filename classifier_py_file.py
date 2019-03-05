@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from timeit import default_timer as timer
 
 
 class Node:
@@ -84,12 +85,6 @@ class Node:
             # print(self.result)
 
         else:
-
-            '''if np.int64 == type(data_types):
-                self.attr, self.split_criterion = self._find_attr(np.hstack(([data_types], x)), y)
-                self.data_type = data_types
-
-            else:'''
             self.attr, self.split_criterion = self._find_attr(np.row_stack((data_types, x)), y)
             self.data_type = data_types[self.attr]
 
@@ -131,6 +126,33 @@ class Node:
                 return self.children[clss].predict(instance)
         else:
             return self.result
+
+    def evaluate(self, x, y, data_types):
+
+        val10      = []
+        x10, y10   = ten_folds(x, y)
+        cmp        = [True for _ in range(10)]
+
+        start = timer()
+
+        for i in range(10):
+            time_while = timer()
+            print("Iteration ", i + 1, ". Time taken so far: ", int(time_while - start), " seconds.")
+
+            tmp    = cmp.copy()
+            tmp[i] = False
+            xtrain = np.row_stack([x10[j] for j in range(10) if tmp[j]])
+            xtest  = np.array(x10[i])
+            ytrain = np.hstack([y10[j] for j in range(10) if tmp[j]])
+            ytest  = np.array(y10[i])
+
+            self.fit(xtrain, ytrain, data_types)
+            predictions = [list(self.predict(row).keys())[0] for row in xtest]
+            print("ACC in this batch:", sum(predictions == ytest) / len(ytest))
+            val10.append(sum(predictions == ytest) / len(ytest))
+
+        end = timer()
+        return val10, end - start
 
 
 def pre_process(x, y, data_types):
