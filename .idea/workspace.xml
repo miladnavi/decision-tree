@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05cd5456-b844-4cb6-acba-e79504210de3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classifier_py_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/classifier_py_file.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,15 +12,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classifier_py_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="183" column="50" lean-forward="true" selection-start-line="183" selection-start-column="50" selection-end-line="183" selection-end-column="50" />
+            <state relative-caret-position="392">
+              <caret line="128" selection-start-line="128" selection-end-line="128" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dict_argopt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dataset_pump-status.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5268" />
           </provider>
         </entry>
       </file>
@@ -103,6 +118,7 @@
         <option value="$PROJECT_DIR$/dataset_LED-display-domain-7digit.csv" />
         <option value="$PROJECT_DIR$/data_test.py" />
         <option value="$PROJECT_DIR$/forest.py" />
+        <option value="$PROJECT_DIR$/dict_argopt.py" />
         <option value="$PROJECT_DIR$/classifier_py_file.py" />
       </list>
     </option>
@@ -416,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551812301048</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="pre process">
+      <created>1551812703986</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1551812703986</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -431,7 +454,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21191354" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21191354" />
       <window_info id="Structure" order="1" weight="0.24986821" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="0" show_stripe_button="false" />
@@ -442,7 +465,7 @@
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49868214" visible="true" weight="0.32948583" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49868214" visible="true" weight="0.32948583" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.32843652" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50131786" side_tool="true" weight="0.32948583" />
@@ -498,7 +521,8 @@
     <MESSAGE value="cross val + time" />
     <MESSAGE value="evaluation functions for both trees and forests" />
     <MESSAGE value="evaluate" />
-    <option name="LAST_COMMIT_MESSAGE" value="evaluate" />
+    <MESSAGE value="pre process" />
+    <option name="LAST_COMMIT_MESSAGE" value="pre process" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/create-tree.py" />
@@ -625,12 +649,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classifier_py_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="183" column="50" lean-forward="true" selection-start-line="183" selection-start-column="50" selection-end-line="183" selection-end-column="50" />
+        <state relative-caret-position="392">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dict_argopt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataset_pump-status.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5268" />
       </provider>
     </entry>
   </component>

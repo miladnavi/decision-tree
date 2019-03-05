@@ -176,7 +176,7 @@ def pre_process(x, y, data_types):
     else:
         bmp = [True for _ in data_types] + [False]
 
-    for it in range(len(list(data_types))):
+    for it in range(len(list(data_types)) + 1):
         if any(isinstance(k, str) for k in tmp[:, it]):
             tmp[:, it] = np.array(pd.factorize(tmp[:, it])[0])
 
