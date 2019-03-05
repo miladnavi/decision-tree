@@ -39,11 +39,11 @@ elif argv is 2:
     # Data to make examples with
     data = np.array(pd.read_csv('../dataset_pump-status.csv'))
     np.random.shuffle(data)
-    X_train = np.array(data[:300, 0:5])
+    X_train = np.array(data[:320, 0:5])
     X_train = np.vstack((np.array([1, 1, 1, 1, 1]), X_train))
-    X_test = np.array(data[301:384, 0:5])
-    Y_train = data[:300, 5]
-    Y_test = data[301:384, 5]
+    X_test = np.array(data[321:384, 0:5])
+    Y_train = data[:320, 5]
+    Y_test = data[321:384, 5]
     test_data = np.array(data[301:, :])
 
     # Training model
