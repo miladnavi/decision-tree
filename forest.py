@@ -85,16 +85,29 @@ class Forest:
         start = timer()
 
         for i in range(10):
-            tmp    = cmp.copy()
+            time_while = timer()
+            print("Iteration ", i + 1, ". Time taken so far: ", int(time_while - start), " seconds.")
+
+            tmp = cmp.copy()
             tmp[i] = False
             xtrain = np.row_stack([x10[j] for j in range(10) if tmp[j]])
-            xtest  = np.array(x10[i])
+            xtest = np.array(x10[i])
             ytrain = np.hstack([y10[j] for j in range(10) if tmp[j]])
-            ytest  = np.array(y10[i])
+            ytest = np.array(y10[i])
 
-            self.fit(xtrain, ytrain, data_types, 2)
-            predictions = [self.predict(row) for row in xtest]
-            val10.append(sum(predictions == ytest) / len(ytest))
+            cum_pred = []
 
+            size = 8
+            self.fit(xtrain, ytrain, data_types, size)
+
+            for j in range(1, size + 1):
+                tmp_forest = Forest()
+                tmp_forest.trees = self.trees[:j]
+                tmp_forest.feature_sets = self.feature_sets[:j]
+                predictions = [tmp_forest.predict(row) for row in xtest]
+                cum_pred.append(sum(predictions == ytest) / len(ytest))
+
+            val10.append(cum_pred.copy())
         end = timer()
-        return np.mean(val10), end - start
+
+        return val10, end - start
