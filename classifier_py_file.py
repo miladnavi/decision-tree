@@ -162,18 +162,18 @@ def pre_process(x, y, data_types):
     :param data_types: vector with data types
     :return: X and Y without contradictions
     """
-    tmp    = np.column_stack((x, y))
+    tmp = np.column_stack((x, y))
     length = len(tmp[:, 0])
     m = np.empty((length, length))
 
     if np.int64 == type(data_types):
         x = x.reshape(len(y), 1)
-        bmp    = [True] + [False]
+        bmp = [True] + [False]
 
     else:
-        bmp    = [True for _ in data_types] + [False]
+        bmp = [True for _ in data_types] + [False]
 
-    for it in range(len([data_types]) + 1):
+    for it in range(len(list(data_types))):
         if any(isinstance(k, str) for k in tmp[:, it]):
             tmp[:, it] = np.array(pd.factorize(tmp[:, it])[0])
 
@@ -182,7 +182,7 @@ def pre_process(x, y, data_types):
             m[i, j] = all((tmp[i, :] == tmp[j, :]) == bmp)
 
     correct_indices = [ele == 0 for ele in sum(m)]
-    return np.array(x[correct_indices, :]), np.array(y[correct_indices])
+    return np.array(tmp[correct_indices, :-1]), np.array(y[correct_indices])
 
 
 def ten_folds(x, y):
