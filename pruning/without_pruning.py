@@ -47,3 +47,5 @@ def tree_without_pruning(tree, test_data, label_number, argv):
 
     # Visualization tree without pruning
     tree_visualizer(tree, 'tree-without-pruning', argv)
+
+    return tree

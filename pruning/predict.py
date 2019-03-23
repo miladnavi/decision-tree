@@ -1,6 +1,7 @@
 from classifier_py_file import Node
 
 
+# Prediction with division data to test and training data-sets
 def predict_result(tree, test_data):
     correct_predicted_counter = 0
     total_number_test_data = len(test_data)

@@ -165,3 +165,4 @@ def err_complexity_pruning(tree, Y_test, X_train, X_test, test_data, argv):
     predict_result(best_pruned_tree, test_data)
 
     tree_visualizer(best_pruned_tree, 'tree-err-comp-pruned', argv)
+    return tree

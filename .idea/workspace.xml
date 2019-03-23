@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="05cd5456-b844-4cb6-acba-e79504210de3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -11,6 +12,11 @@
       <change beforePath="$PROJECT_DIR$/classifier_py_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/classifier_py_file.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/forest.py" beforeDir="false" afterPath="$PROJECT_DIR$/forest.py" afterDir="false" />
 >>>>>>> 7bfc41b6516dbdc326e53a4c3e2b5c59d1509690
+=======
+    <list default="true" id="05cd5456-b844-4cb6-acba-e79504210de3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classifier_py_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/classifier_py_file.py" afterDir="false" />
+>>>>>>> 8bd1c37e577e96cf9fcd2b26b735780c5010aa89
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +26,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
 <<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/pruning/main.py">
@@ -44,6 +51,13 @@
             <state relative-caret-position="272">
               <caret line="144" column="9" lean-forward="true" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
 >>>>>>> 7bfc41b6516dbdc326e53a4c3e2b5c59d1509690
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classifier_py_file.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="183" column="50" lean-forward="true" selection-start-line="183" selection-start-column="50" selection-end-line="183" selection-end-column="50" />
+>>>>>>> 8bd1c37e577e96cf9fcd2b26b735780c5010aa89
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -51,6 +65,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dataset_13_breast-cancer.csv">
@@ -73,6 +88,13 @@
             <state relative-caret-position="542">
               <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
 >>>>>>> 7bfc41b6516dbdc326e53a4c3e2b5c59d1509690
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+>>>>>>> 8bd1c37e577e96cf9fcd2b26b735780c5010aa89
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -81,7 +103,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/pruning/classifier_py_file.py">
+=======
+        <entry file="file://$PROJECT_DIR$/pruning/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_test.py">
+>>>>>>> 8bd1c37e577e96cf9fcd2b26b735780c5010aa89
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
             <state relative-caret-position="165">
@@ -184,6 +222,7 @@
       <find>unique</find>
       <find>bin</find>
       <find>print</find>
+      <find>shuffle</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -199,6 +238,7 @@
         <option value="$PROJECT_DIR$/classifier.ipynb" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/dataset_LED-display-domain-7digit.csv" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/classifier_py_file.py" />
 <<<<<<< HEAD
         <option value="$PROJECT_DIR$/pruning/main.py" />
@@ -206,6 +246,11 @@
 =======
         <option value="$PROJECT_DIR$/forest.py" />
 >>>>>>> 7bfc41b6516dbdc326e53a4c3e2b5c59d1509690
+=======
+        <option value="$PROJECT_DIR$/data_test.py" />
+        <option value="$PROJECT_DIR$/forest.py" />
+        <option value="$PROJECT_DIR$/classifier_py_file.py" />
+>>>>>>> 8bd1c37e577e96cf9fcd2b26b735780c5010aa89
       </list>
     </option>
   </component>
@@ -504,7 +549,21 @@
       <option name="project" value="LOCAL" />
       <updated>1551662279851</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="evaluation functions for both trees and forests">
+      <created>1551808561033</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1551808561034</updated>
+    </task>
+    <task id="LOCAL-00018" summary="evaluate">
+      <created>1551812301048</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1551812301048</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -524,9 +583,8 @@
       <window_info id="Structure" order="1" weight="0.25" />
 =======
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21191354" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21191354" />
       <window_info id="Structure" order="1" weight="0.24986821" />
 >>>>>>> 7bfc41b6516dbdc326e53a4c3e2b5c59d1509690
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -538,7 +596,7 @@
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32937366" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49868214" visible="true" weight="0.32948583" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49868214" visible="true" weight="0.32948583" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.32843652" />
       <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32904884" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50131786" side_tool="true" weight="0.32948583" />
@@ -592,7 +650,9 @@
     <MESSAGE value="bug fixing in classifier. #datatype(np.float64)" />
     <MESSAGE value="started preprocessing function" />
     <MESSAGE value="cross val + time" />
-    <option name="LAST_COMMIT_MESSAGE" value="cross val + time" />
+    <MESSAGE value="evaluation functions for both trees and forests" />
+    <MESSAGE value="evaluate" />
+    <option name="LAST_COMMIT_MESSAGE" value="evaluate" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/create-tree.py" />
@@ -685,6 +745,7 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/classifier_py_file.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1950">
@@ -700,6 +761,8 @@
         <state relative-caret-position="1305">
           <caret line="96" column="56" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="56" />
 =======
+=======
+>>>>>>> 8bd1c37e577e96cf9fcd2b26b735780c5010aa89
     <entry file="file://$PROJECT_DIR$/dataset_61_iris.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -750,17 +813,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classifier_py_file.py">
+    <entry file="file://$PROJECT_DIR$/data_test.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="272">
           <caret line="144" column="9" lean-forward="true" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
 >>>>>>> 7bfc41b6516dbdc326e53a4c3e2b5c59d1509690
+=======
+        <state relative-caret-position="915">
+          <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
+>>>>>>> 8bd1c37e577e96cf9fcd2b26b735780c5010aa89
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/pruning/visualization.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -782,18 +851,34 @@
         <state relative-caret-position="915">
           <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
 >>>>>>> 7bfc41b6516dbdc326e53a4c3e2b5c59d1509690
+=======
+    <entry file="file://$PROJECT_DIR$/forest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pruning/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+>>>>>>> 8bd1c37e577e96cf9fcd2b26b735780c5010aa89
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forest.py">
+    <entry file="file://$PROJECT_DIR$/classifier_py_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="111" lean-forward="true" selection-start-line="111" selection-end-line="111" />
+        <state relative-caret-position="497">
+          <caret line="183" column="50" lean-forward="true" selection-start-line="183" selection-start-column="50" selection-end-line="183" selection-end-column="50" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

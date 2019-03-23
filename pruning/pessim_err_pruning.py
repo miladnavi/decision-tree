@@ -95,4 +95,5 @@ def pessim_err_pruning(tree, test_data, argv):
     predict_result(tree, test_data)
     # Visualization the pruned tree
     tree_visualizer(tree, 'tree-pessim-err-pruned', argv)
+    return tree
 

@@ -90,3 +90,4 @@ def min_err_pruning(tree, label_number, test_data, argv):
     predict_result(tree, test_data)
     # Visualization the pruned tree
     tree_visualizer(tree, 'tree-min-err-pruned', argv)
+    return tree
