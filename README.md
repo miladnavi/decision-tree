@@ -90,7 +90,7 @@ Determinate the number of the training data and number of attribute (in this exa
 X_train = np.array(data[:460, 0:7])
 ```
 
-Determinate the kind of attributes (1 : `nominal` and 2 : `numeric`):
+Determinate the kind of attributes (1 : `numeric` and 2 : `nominal`):
 ```
 X_train = np.vstack((np.array([2, 2, 2, 2, 2, 2, 2]), X_train))
 ```
